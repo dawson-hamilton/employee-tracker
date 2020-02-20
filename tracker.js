@@ -10,5 +10,27 @@ var connection = mysql.createConnection({
 
 connection.connect(function (err) {
     if (err) throw err;
-    start();
+    console.log("-----------------------------------------------\n");
+    console.log("                    Welcome                    ");
+    console.log("                    to the                      ");
+    console.log("                    employee                   ");
+    console.log("                   management                  ");
+    console.log("                    system!                   \n");
+    console.log("-----------------------------------------------\n");
+    runManagementQuery();
 })
+
+function runManagementQuery() {
+    inquirer
+        .prompt({
+            name: "action",
+            type: "list",
+            message: "choose one of the choices below",
+            choices: [
+                "Add Departments, Roles, or Employees?",
+                "View Employees?",
+                "Update Employee Roles",
+                "exit"
+            ]
+        })
+}
