@@ -27,10 +27,36 @@ function runManagementQuery() {
             type: "list",
             message: "choose one of the choices below",
             choices: [
-                "Add Departments, Roles, or Employees?",
-                "View Employees?",
+                "Add Departments, Roles, or Employees",
+                "View Employees",
                 "Update Employee Roles",
                 "exit"
             ]
         })
-}
+        .then(function (answer) {
+            switch (answer.action) {
+                case "Add Departments, Roles, or Employees":
+                    console.log("-----------------------------------------------------\n");
+                    console.log("follow the instructions that follow this message\n");
+                    console.log("-----------------------------------------------------\n");
+                    addQuery();
+                    break;
+
+                case "View Employees":
+                    viewEmployees();
+                    break;
+
+                case "Update Employee Roles":
+                    updateEmployees();
+                    break;
+
+                case "exit":
+                    console.log("------------------------------------------------------\n");
+                    console.log("I hope you enjoyed the Employee Management System!\n");
+                    console.log("------------------------------------------------------\n");
+                    connection.end();
+                    break;
+            }
+        })
+};
+
