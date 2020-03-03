@@ -30,6 +30,6 @@ VALUES
 ("vp_product", 210000, 8),
 ("product_manager", 150000, 8);
 
-INSERT INTO employee(first_name, last_name, role_id, manager_id)
+INSERT INTO employee(first_name, last_name, role_id)
 VALUES
 ("Jane", "Doe", 22)
